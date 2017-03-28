@@ -1,0 +1,3 @@
+Goal from  3/28:
+    Get a flat line drawn across screen in curses.
+
