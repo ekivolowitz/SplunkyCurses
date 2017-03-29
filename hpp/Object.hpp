@@ -2,19 +2,21 @@
 #define OBJECT_HPP
 
 class Object{
-private:
-	int xPos;
-	int yPos;
-public:
-	Object(int initXPos, int initYPos);
+    private:
 
-	int getXPos();
+        int xPos;
+	    int yPos;
+    
+    public:
+	    
+        Object(int initXPos, int initYPos);
+	
+        int getXPos();
+	    int getYPos();
+	    
+        void setXPos(int newXPos);
+	    void setYPos(int newYPos);	
 
-	int getYPos();
-
-	void setXPos(int newXPos);
-
-	void setYPos(int newYPos);	
-}
+};
 
 #endif

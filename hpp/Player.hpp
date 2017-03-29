@@ -4,9 +4,9 @@
 #include "Object.hpp"
 
 class Player : public Object {
-private:
-	int health;
-public:
+    private:
+    	int health;
+    public:
         /**
         *@brief Constructor for player
         *
@@ -15,15 +15,15 @@ public:
         */
         Player(int initXPos, int initYPos);
 
-	void movePlayerLeft();
+	    void movePlayerLeft();
 	
-	void movePlayerRight();
+        void movePlayerRight();
 
-	void jump();
+	    void jump();
 
-	void decrHealth();
+	    void decrHealth();
 
-	bool isAlive();
-}
+	    bool isAlive();
+};
 
 #endif

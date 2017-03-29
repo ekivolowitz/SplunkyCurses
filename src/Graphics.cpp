@@ -19,6 +19,7 @@ void Graphics::drawGameField()
     getmaxyx(stdscr, mx, my);
     mvprintw(10, 10, "X: %d", mx);
     mvprintw(11, 10, "Y: %d", my);
+    mvaddch(20, 20, 'C' | A_BOLD | A_UNDERLINE);
     getch();
     refresh();
     endwin();

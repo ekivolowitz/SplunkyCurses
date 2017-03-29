@@ -1,20 +1,24 @@
-#include "Player.hpp"
+#include "../hpp/Player.hpp"
 
-Player::Player(int initXPos, int initYPos) : Object(initXPos, initYPos){
+Player::Player(int initXPos, int initYPos) : Object(initXPos, initYPos)
+{
 	this->health = 3;
 }
 
-	void decrHealth(){
+void Player::decrHealth()
+{
 		health--;
-	};
+}
 
-	bool isAlive(){
-		if (health > 0){
-			return true;
-		}
-		else{
-			return false;
-		}
-	};
+bool Player::isAlive()
+{
+	if (health > 0)
+    {
+		return true;
+	}
+	else
+    {
+		return false;
+    }
 }
 
