@@ -1,5 +1,5 @@
 make:
-	g++ src/main.cpp -o run -std=c++11
+	g++ src/*.cpp -o run -std=c++11 -lncurses
 exec:
 	./run
 clean:

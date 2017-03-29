@@ -1,0 +1,7 @@
+Goal from  3/28:
+    Get a flat line drawn across screen in curses.
+
+
+
+thing I'm using to learn ncurses: 
+    http://www.tldp.org/HOWTO/NCURSES-Programming-HOWTO/printw.html
