@@ -1,5 +1,7 @@
 Goal from  3/28:
-    Get a flat line drawn across screen in curses.
+    Get a flat line drawn across screen in curses. - done
+Goal from 3/29:
+    Create a way to draw the superclass object on the screen. - done
 
 
 
