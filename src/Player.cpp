@@ -1,8 +1,8 @@
 #include "../hpp/Player.hpp"
 
-Player::Player(int initXPos, int initYPos) : Object(initXPos, initYPos)
+Player::Player(int initXPos, int initYPos) : Object(initXPos, initYPos), health(3)
 {
-	this->health = 3;
+	//this->health = 3;
 }
 
 void Player::decrHealth()

@@ -24,6 +24,7 @@ class Player : public Object {
 	    void decrHealth();
 
 	    bool isAlive();
+
 };
 
 #endif
