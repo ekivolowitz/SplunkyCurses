@@ -61,7 +61,8 @@ class Object{
          * @param int yPos - the y position to update the pair to.
          */
         void updateCharacterPosition(std::pair<int, int>& p, int xPos, int yPos);
-        
+       
+
 
         /**
          * Sets the xPos of the object.

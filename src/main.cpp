@@ -7,13 +7,13 @@ using namespace std;
 
 int main()
 {
-    std::cout << "Hello World" << std::endl;
     Graphics g;
     
-    Object o(25,25);
-    
+    Player p(20,20);
+
+
     g.drawGameField();
-    g.drawObject(o);
+    g.drawObject(p);
     g.endWindow(); 
     return 0;
 }

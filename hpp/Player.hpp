@@ -5,7 +5,15 @@
 
 class Player : public Object {
     private:
-    	int health;
+        std::pair<char, std::pair<int, int> > head;
+        std::pair<char, std::pair<int, int> > body;
+        std::pair<char, std::pair<int, int> > leftArm;
+        std::pair<char, std::pair<int, int> > torso;
+        std::pair<char, std::pair<int, int> > rightArm;
+        std::pair<char, std::pair<int, int> > leftLeg;
+        std::pair<char, std::pair<int, int> > rightLeg;
+        int health;
+    
     public:
         /**
         *@brief Constructor for player
