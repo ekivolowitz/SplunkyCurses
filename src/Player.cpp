@@ -67,7 +67,7 @@ Player::Player(int initXPos, int initYPos) : Object(initXPos, initYPos), health(
 //     return yPos;   
 // }
 
-void Player::updatePlayerPosition(int a, Graphics g) 
+void Player::updatePlayerPosition(int a) 
 {
     //std::vector<std::string> partsToDraw = getPartsToUpdate();
     //for(auto it = partsToDraw.begin(); it != partsToDraw.end(); ++it)

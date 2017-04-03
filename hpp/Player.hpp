@@ -35,7 +35,7 @@ class Player : public Object {
 	    // void decrHealth();
 
 	    // bool isAlive();
-        void updatePlayerPosition(int a, Graphics g);
+        void updatePlayerPosition(int a);
         // int getXPos();
         // int getYPos();
 

@@ -21,6 +21,7 @@ int main()
 
 
     g.drawGameField();
+    g.drawObject(p);
     int x = -2;
     while(1)
     {
@@ -32,7 +33,7 @@ int main()
         else
         {
             g.eraseObject(p);
-            p.updatePlayerPosition(ch, g);
+            p.updatePlayerPosition(ch);
             g.drawObject(p);
         }
     }
