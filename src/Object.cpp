@@ -89,7 +89,37 @@ std::unordered_map<std::string, Coordinate>& Object::getItemsToDraw()
 // //    p.second = yPos;
 // //}
 
-//void Object::updatePlayerPosition()
-//{
+void Object::updatePosition(int a)
+{
+	std::unordered_map<std::string, Coordinate>& p = getItemsToDraw();
     
-//}
+    //Moving left
+    if(a == 'a')
+    {
+        for(auto it = p.begin(); it != p.end(); ++it)
+        {
+            ((*it).second).x = ((*it).second).x - 1;
+        }
+    }
+    else if(a == 's')
+    {
+        for(auto it = p.begin(); it != p.end(); ++it)
+        {
+            ((*it).second).y = ((*it).second).y + 1;
+        }
+    }
+    else if(a == 'd')
+    {
+        for(auto it = p.begin(); it != p.end(); ++it)
+        {
+            ((*it).second).x = ((*it).second).x + 1;
+        }
+    }
+    else if(a == 'w')
+    {
+        for(auto it = p.begin(); it != p.end(); ++it)
+        {
+            ((*it).second).y = ((*it).second).y - 1;
+        }
+    }    
+}

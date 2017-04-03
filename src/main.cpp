@@ -33,7 +33,7 @@ int main()
         else
         {
             g.eraseObject(p);
-            p.updatePlayerPosition(ch);
+            p.updatePosition(ch);
             g.drawObject(p);
         }
     }

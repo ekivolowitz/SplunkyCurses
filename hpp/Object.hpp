@@ -72,7 +72,7 @@ class Object{
          */
         //void updateCharacterPosition(std::pair<int, int>& p, int xPos, int yPos);
        
-        //void updatePlayerPosition();
+        void updatePosition(int a);
 
         /**
          * Sets the xPos of the object.

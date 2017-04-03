@@ -67,44 +67,7 @@ Player::Player(int initXPos, int initYPos) : Object(initXPos, initYPos), health(
 //     return yPos;   
 // }
 
-void Player::updatePlayerPosition(int a) 
+void Player::updatePosition(int a) 
 {
-    //std::vector<std::string> partsToDraw = getPartsToUpdate();
-    //for(auto it = partsToDraw.begin(); it != partsToDraw.end(); ++it)
-	//{
-    //    
-    //}
-    //getItemsToDraw()["head"].x = 5; 
-    
-    std::unordered_map<std::string, Coordinate>& p = getItemsToDraw();
-    
-    //Moving left
-    if(a == 'a')
-    {
-        for(auto it = p.begin(); it != p.end(); ++it)
-        {
-            ((*it).second).x = ((*it).second).x - 1;
-        }
-    }
-    else if(a == 's')
-    {
-        for(auto it = p.begin(); it != p.end(); ++it)
-        {
-            ((*it).second).y = ((*it).second).y + 1;
-        }
-    }
-    else if(a == 'd')
-    {
-        for(auto it = p.begin(); it != p.end(); ++it)
-        {
-            ((*it).second).x = ((*it).second).x + 1;
-        }
-    }
-    else if(a == 'w')
-    {
-        for(auto it = p.begin(); it != p.end(); ++it)
-        {
-            ((*it).second).y = ((*it).second).y - 1;
-        }
-    }
+	this->Object::updatePosition(a);
 }
