@@ -9,6 +9,6 @@ Mine and Jacob's (@jmodonnell96) version of Splunky played in the terminal!
 
 <h1>How to play the game:</h1>
 <ol>
-    <li>Use "W", "A", "S", "D" to move character around screen."</li>
-    <li>Press "Q" twice to quit the game.</li>
+    <li>Use "w", "a", "s", "d" to move character around screen."</li>
+    <li>Press "q" twice to quit the game.</li>
 </ol>
