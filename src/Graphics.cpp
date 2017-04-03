@@ -8,22 +8,26 @@ using namespace std;
  * Basic constructor for the graphics object.
  * Does not need to return anything as curses is initiated.
  */
+
+
 Graphics::Graphics()
-{
+{    
     //Basic commands to initialize ncurses properly.
     //initscr() begins curses mode.
     initscr();
-
+    
+    getmaxyx(stdscr, maxY, maxX);
+    mainPathYLevel = 2 * (maxY / 3);
+    
+    
+    cbreak();
     //Removes the cursor from the screen.
     curs_set(0);
-
     //Allows for raw text (which lets us use the arrow keys
     raw();
-
     //Does not repeat back to the screen what the user enters
     //unless directly told to.
     noecho();
-
     //Instantiates the keyboard as an object that can send text through stdin
     keypad(stdscr, TRUE);
 }
@@ -33,23 +37,14 @@ Graphics::Graphics()
  */
 void Graphics::drawGameField()
 {
-    //max x coordinate and y coordinate.
-    int mx, my;
-
-    //Used to draw the bottom of the map.
-    int currX, currY;
-
-    //This function actually gets the max coordinates. It is a 
-    //standard function in the curses library.
-    getmaxyx(stdscr, my, mx);
-    
-    currX = mx;
-    currY = my;
+    //max x coordinate and y coordinate copies.
+    int currX = maxX;
+    int currY = maxY;
     
     //Draws the floor.
     while(currX > 0)
     {
-        mvaddch(my / 2, currX, '-');
+        mvaddch(mainPathYLevel, currX, '-');
         currX--;
     }
 
@@ -68,22 +63,40 @@ void Graphics::drawGameField()
  * @param Object& e - the object to be drawn.
  * @return void
  */
- void Graphics::drawObject(Object& e)
+void Graphics::drawObject(Object& e)
 {
-    std::vector<std::pair<char, std::pair<int, int> > > draw = e.getItemsToDraw();
-    
-    std::vector<std::pair<char, std::pair<int, int> > >::iterator it;
-    
-    for(it = draw.begin(); it != draw.end(); ++it)
+    // if(e.getXPos() == 10 && e.getYPos() == 10)
+    // {
+    //     e.setYPos(mainPathYLevel - 3);
+    //     e.setXPos(10);
+    //     e.updatePlayerPosition();
+    // }
+    unordered_map<string, Coordinate> drawing = e.getItemsToDraw();
+
+    for(auto it = drawing.begin(); it != drawing.end(); ++it)
     {
-        std::pair<char, std::pair<int, int > > deref = *it;
-        char d = deref.first;
-        int xCoord = (deref.second).first;
-        int yCoord = (deref.second).second;
-        mvaddch(yCoord,xCoord,d);
+        mvaddch((*it).second.y, (*it).second.x, (*it).second.c);
+    }
+    refresh();
+    getch();
+}
+
+
+void Graphics::eraseObject(Object& e)
+{
+    unordered_map<string, Coordinate> drawing = e.getItemsToDraw();
+    for(auto it = drawing.begin(); it != drawing.end(); ++it)
+    {
+       mvdelch((*it).second.y, (*it).second.x); 
     }
     refresh();
 }
+
+int Graphics::getMovementInput()
+{
+    return getch();
+}
+
 
 
 /**

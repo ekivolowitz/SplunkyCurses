@@ -7,9 +7,10 @@
 #include "../hpp/Object.hpp"
 
 class Graphics {
+    
+    
     public:
-
-    	/**
+        /**
          * Basic constructor for the graphics object.
          * Does not need to return anything as curses is initiated.
          */
@@ -30,16 +31,28 @@ class Graphics {
          * @param Object& e - the object to be drawn.
          * @return void
          */
-        void drawObject(Object& e);
         
+        int getMovementInput();
+        
+        void drawObject(Object& e);
+        void eraseObject(Object& e);
+
+
+
         /**
          * This function ends the window when called. It is used in one place, and that is at the end of
          * the main.cpp's main function. It will ask the user for a character, and no matter what
          * they press, it will then end the curses session.
          */
         void endWindow();
+    
+    
     private:
 
+        
+        int maxX;
+        int maxY;
+        int mainPathYLevel;
 };
 
 
