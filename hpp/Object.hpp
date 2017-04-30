@@ -24,7 +24,8 @@ class Object{
          * Standard constructor for the Object superclass.
          */
         Object(int x, int y);
-	    // Coordinate coord;
+        Object();
+        // Coordinate coord;
         // Coordinate getCoord();
         
         /**
@@ -73,7 +74,6 @@ class Object{
         //void updateCharacterPosition(std::pair<int, int>& p, int xPos, int yPos);
        
         void updatePosition(int a);
-
         /**
          * Sets the xPos of the object.
          * @param int newXPos - the int to set the new xPos to.
@@ -88,7 +88,7 @@ class Object{
          * @return void
          */ 
         //void setYPos(int newYPos);
-        
+                
         
 };
 #endif

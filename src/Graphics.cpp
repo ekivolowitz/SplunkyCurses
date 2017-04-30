@@ -9,7 +9,6 @@ using namespace std;
  * Does not need to return anything as curses is initiated.
  */
 
-
 Graphics::Graphics()
 {    
     //Basic commands to initialize ncurses properly.
@@ -18,8 +17,6 @@ Graphics::Graphics()
     
     getmaxyx(stdscr, maxY, maxX);
     mainPathYLevel = 2 * (maxY / 3);
-    
-    
     cbreak();
     //Removes the cursor from the screen.
     curs_set(0);
@@ -78,7 +75,6 @@ void Graphics::drawObject(Object& e)
         mvaddch((*it).second.y, (*it).second.x, (*it).second.c);
     }
     refresh();
-    getch();
 }
 
 
@@ -106,6 +102,5 @@ int Graphics::getMovementInput()
  */
 void Graphics::endWindow()
 {
-    getch();
     endwin();
 }

@@ -10,6 +10,10 @@ Object::Object(int x, int y){
 	yCoordinate = y;
 }
 
+Object::Object()
+{
+
+}
 //void Object::addToPartsToUpdate(std::string s)
 //{
 //	parts.push_back(s);
@@ -92,8 +96,14 @@ std::unordered_map<std::string, Coordinate>& Object::getItemsToDraw()
 void Object::updatePosition(int a)
 {
 	std::unordered_map<std::string, Coordinate>& p = getItemsToDraw();
-    
+    int lowestPoint = 0;
+    for(auto it = p.begin(); it != p.end(); ++it)
+    {
+        if(((*it).second).y > lowestPoint) lowestPoint = ((*it).second).y;
+    }
+
     //Moving left
+    /*
     if(a == 'a')
     {
         for(auto it = p.begin(); it != p.end(); ++it)
@@ -101,13 +111,20 @@ void Object::updatePosition(int a)
             ((*it).second).x = ((*it).second).x - 1;
         }
     }
-    else if(a == 's')
+    */
+    if(a == 's')
     {
-        for(auto it = p.begin(); it != p.end(); ++it)
+        if(lowestPoint + 1 <  40)
         {
-            ((*it).second).y = ((*it).second).y + 1;
+            
+            for(auto it = p.begin(); it != p.end(); ++it)
+            {
+                ((*it).second).y = ((*it).second).y + 1;
+            }
+    
         }
     }
+    /*
     else if(a == 'd')
     {
         for(auto it = p.begin(); it != p.end(); ++it)
@@ -115,6 +132,7 @@ void Object::updatePosition(int a)
             ((*it).second).x = ((*it).second).x + 1;
         }
     }
+    */
     else if(a == 'w')
     {
         for(auto it = p.begin(); it != p.end(); ++it)
@@ -123,3 +141,4 @@ void Object::updatePosition(int a)
         }
     }    
 }
+
