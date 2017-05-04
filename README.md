@@ -12,6 +12,6 @@ Finished Object superclass, I believe.
 
 <h1>How to play the game:</h1>
 <ol>
-    <li>Use "w", "a", "s", "d" to move character around screen."</li>
+    <li>Use "w" make the character jump.</li>
     <li>Press "q" twice to quit the game.</li>
 </ol>
